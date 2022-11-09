@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy lottary ticket</title>
+</head>
+<body>
+
+    <label for="LottaryTicketNum">Enter yourLottaryTicketNum</label>
+    <input type="number" id="LTN" name="ticketNum" value="0" min='0' max="999">
+    <label for="name">Enter your name</label>
+    <input type="text" value="Mg/Ma" id="nm">
+    <label for="phNum">Enter your phone number</label>
+    <input type="number" value="09" id="ph">
+
+    
+    
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <p></p>
+    
+</body>
+
+<script>
+    let number=document.querySelector('input')
+    let yourName=document.getElementById('nm')
+    let phoneNumber=document.getElementById('ph')
+    
+    let p=document.querySelector('p')
+    let h2=document.querySelector('h2')
+    let h1=document.querySelector('h1')
+    let h3=document.querySelector('h3')
+    
+    number.addEventListener('change',lottaryTicketNum)
+    yourName.addEventListener('change',name)
+    phoneNumber.addEventListener('change',phNum)    
+
+
+    function lottaryTicketNum (){
+        
+        let choosen=number.value        
+        if(choosen>1000){
+            h1.textContent="Ticket number must be less then 1000";
+            
+        }else if(choosen<0){
+            h1.textContent="Ticket number must be greater then -1";
+            
+        }else{
+            h1.textContent="Your ticket number "+ choosen;
+        }
+        
+       
+    }
+    
+    function phNum(){
+        
+        h3.textContent="[Phone number = "+ phoneNumber.value +" ]"
+    }
+
+    function name(){
+        h2.textContent="[name = "+ yourName.value +" ]"
+       
+    }
+    if (lottaryTicketNum<1000){
+        let customer = number.value + phoneNumber.value + yourName.value
+        p.textContent = customer
+    }
+    
+
+
+</script>
+</html>
